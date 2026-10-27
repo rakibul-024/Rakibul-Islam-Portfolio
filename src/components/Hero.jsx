@@ -44,7 +44,7 @@ export default function Hero() {
         style={{ background: 'radial-gradient(circle,rgba(30,77,183,.12),transparent 65%)' }}
       />
 
-      <div className="relative z-10">
+      <div className="relative z-10 order-2 md:order-1">
         <h1 className="font-display text-5xl font-extrabold text-mauve-100 sm:text-6xl lg:text-7xl">
           RAKIBUL<br />ISLAM
         </h1>
@@ -55,13 +55,13 @@ export default function Hero() {
         <p className="mt-5 max-w-lg text-slate-400">
           I build complete web apps — from the database and authentication to a clean, responsive interface. Based in Bangladesh, open to work worldwide.
         </p>
-        <div className="mt-8 flex flex-wrap gap-4">
-          <a href="#projects" className="interactive-button rounded bg-brand px-8 py-3.5 font-medium text-white transition hover:bg-brand2">View My Work</a>
-          <a href="#contact" className="interactive-button rounded border border-line px-8 py-3.5 text-slate-300 transition hover:border-brand2 hover:text-white">Get in Touch</a>
+        <div className="mt-8 grid w-full grid-cols-2 gap-3 sm:flex sm:w-auto sm:flex-wrap sm:gap-4">
+          <a href="#projects" className="interactive-button flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded bg-brand px-3 text-center text-sm font-medium text-white transition hover:bg-brand2 sm:w-auto sm:px-8 sm:py-3.5 sm:text-base">View My Work</a>
+          <a href="#contact" className="interactive-button flex min-h-12 w-full items-center justify-center whitespace-nowrap rounded border border-line px-3 text-center text-sm text-slate-300 transition hover:border-brand2 hover:text-white sm:w-auto sm:px-8 sm:py-3.5 sm:text-base">Get in Touch</a>
         </div>
       </div>
 
-      <div className="relative z-10 flex justify-center">
+      <div className="relative z-10 order-1 flex justify-center md:order-2">
         <div className="relative h-64 w-64 sm:h-72 sm:w-72">
           <div className="avatar-orbit avatar-orbit-outer absolute -inset-8 rounded-full" aria-hidden="true">
             <span className="avatar-orbit-dot avatar-orbit-dot-primary" />

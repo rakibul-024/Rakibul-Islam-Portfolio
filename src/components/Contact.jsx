@@ -29,6 +29,7 @@ export default function Contact() {
           email: form.email,
           message: form.message,
           _subject: `Portfolio message from ${form.name}`,
+          _replyto: form.email,
         }),
       })
       const result = await response.json()

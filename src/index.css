@@ -33,65 +33,69 @@ body {
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-@keyframes avatar-orbit-spin {
-  to { transform: rotate(360deg); }
-}
-
 .avatar-orbit {
-  background: conic-gradient(
-    from 8deg,
-    transparent 0deg 250deg,
-    rgba(37, 99, 235, 0.22) 270deg,
-    #2563eb 288deg,
-    #93c5fd 296deg,
-    #3b82f6 304deg,
-    transparent 322deg 360deg
-  );
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-  filter: drop-shadow(0 0 5px rgba(37, 99, 235, 0.55));
-  animation: avatar-orbit-spin 7s linear infinite;
+  border: 1px dotted rgba(59, 130, 246, 0.36);
+  animation: avatar-orbit-rotate 12s linear infinite;
 }
 
-.avatar-orbit::after {
+.avatar-orbit::before {
   position: absolute;
-  top: 50%;
-  right: -3px;
-  width: 8px;
-  height: 8px;
-  border-radius: 9999px;
-  background: #60a5fa;
-  box-shadow: 0 0 14px 4px rgba(59, 130, 246, 0.65);
+  inset: -1px;
+  border: 2px solid transparent;
+  border-top-color: #3b82f6;
+  border-left-color: #2563eb;
+  border-radius: inherit;
   content: '';
+  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.7));
+}
+
+.avatar-orbit-outer {
+  animation-duration: 14s;
 }
 
 .avatar-orbit-inner {
-  background: conic-gradient(
-    from 150deg,
-    transparent 0deg 278deg,
-    #2563eb 290deg,
-    #60a5fa 298deg,
-    transparent 310deg 360deg
-  );
-  animation-duration: 11s;
-  animation-direction: reverse;
-  filter: drop-shadow(0 0 4px rgba(37, 99, 235, 0.45));
+  border: 1px dashed rgba(59, 130, 246, 0.2);
+}
+
+.avatar-orbit-inner::before {
+  display: none;
 }
 
 .avatar-orbit-inner::after {
-  top: -3px;
-  right: 50%;
-  width: 6px;
-  height: 6px;
+  display: none;
 }
 
-@keyframes avatar-ring-spin {
+.avatar-orbit-dot {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  border-radius: 9999px;
+  background: #3b82f6;
+  box-shadow: 0 0 10px 3px rgba(37, 99, 235, 0.7), 0 0 20px 6px rgba(37, 99, 235, 0.3);
+}
+
+.avatar-orbit-dot-primary {
+  top: 74%;
+  left: -5px;
+  width: 9px;
+  height: 9px;
+}
+
+.avatar-orbit-dot-secondary {
+  right: 37%;
+  bottom: -5px;
+  width: 8px;
+  height: 8px;
+  background: #60a5fa;
+}
+
+@keyframes avatar-orbit-rotate {
   to { transform: rotate(360deg); }
 }
 
-.avatar-ring {
-  background: conic-gradient(from 0deg, transparent 0 15%, #3b82f6 35%, #a78bfa 50%, transparent 70% 100%);
-  animation: avatar-ring-spin 4s linear infinite;
+.avatar-photo-frame {
+  border: 7px solid #102449;
+  box-shadow: inset 0 0 0 2px rgba(59, 130, 246, 0.28), 0 0 18px rgba(37, 99, 235, 0.2);
 }
 
 .profile-photo-frame:hover .profile-photo,
@@ -241,7 +245,8 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .reveal { opacity: 1; transform: none; transition: none; }
-  .avatar-ring, .avatar-orbit, .typewriter-cursor { animation: none; }
+  .avatar-orbit { animation-duration: 24s; }
+  .typewriter-cursor { animation: none; }
   .profile-photo, .project-image, .interactive-card, .interactive-button, .interactive-icon, .project-card, .project-preview-icon { transition: none; }
   .interactive-card:hover, .interactive-button:hover, .interactive-icon:hover { transform: none; }
   .project-card:hover { transform: none; }

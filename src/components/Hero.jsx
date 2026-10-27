@@ -63,8 +63,10 @@ export default function Hero() {
 
       <div className="relative z-10 flex justify-center">
         <div className="relative h-64 w-64 sm:h-72 sm:w-72">
-          <div className="absolute -inset-4 rounded-full border border-brand/40 shadow-[0_0_24px_rgba(59,130,246,0.15)]" />
-          <div className="avatar-orbit avatar-orbit-outer absolute -inset-8 rounded-full" aria-hidden="true" />
+          <div className="avatar-orbit avatar-orbit-outer absolute -inset-8 rounded-full" aria-hidden="true">
+            <span className="avatar-orbit-dot avatar-orbit-dot-primary" />
+            <span className="avatar-orbit-dot avatar-orbit-dot-secondary" />
+          </div>
           <div className="avatar-orbit avatar-orbit-inner absolute -inset-4 rounded-full" aria-hidden="true" />
           <Avatar decorated className="h-full w-full" />
         </div>

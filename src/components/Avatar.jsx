@@ -21,13 +21,12 @@ export default function Avatar({ className = '', decorated = false }) {
   }
 
   return (
-    <div className={`avatar-shell relative rounded-full p-[3px] ${className}`}>
-      <div className="avatar-ring absolute inset-0 rounded-full" aria-hidden="true" />
-      <div className="relative z-10 h-full w-full overflow-hidden rounded-full border-2 border-bg">
+    <div className={`avatar-shell relative rounded-full ${className}`}>
+      <div className="avatar-photo-frame relative z-10 h-full w-full overflow-hidden rounded-full">
         {image}
       </div>
-      <div className="absolute -bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-brand/40 bg-bg3 px-4 py-2 text-xs font-medium text-white shadow-lg sm:text-sm">
-        <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
+      <div className="absolute -bottom-3 left-1/2 z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap rounded-full border border-blue-400/40 bg-brand px-4 py-2 text-xs font-bold uppercase text-white shadow-[0_0_24px_rgba(37,99,235,0.4)] sm:text-sm">
+        <i className="fa-solid fa-circle-check text-xs" aria-hidden="true" />
         Available for Hire
       </div>
     </div>

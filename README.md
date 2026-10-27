@@ -1,4 +1,4 @@
-# MD RAKIBUL ISLAM — Portfolio (React + Vite + Tailwind CSS)
+# MD RAKIBUL ISLAM — Portfolio 
 
 ## Run
     npm install

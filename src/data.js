@@ -11,7 +11,7 @@ export const socials = [
   { title: 'Facebook', icon: 'fa-brands fa-facebook-f', href: 'https://web.facebook.com/shondha.tara.3300' },
   { title: 'Instagram', icon: 'fa-brands fa-instagram', href: 'https://www.instagram.com/rifat_206924/' },
   { title: 'GitHub', icon: 'fa-brands fa-github', href: 'https://github.com/rakibul-024' },
-  { title: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/in/md-rakibul-islam-155108343' },
+  { title: 'LinkedIn', icon: 'fa-brands fa-linkedin-in', href: 'https://www.linkedin.com/in/md-rakibul-islam-dev/' },
 ]
 
 export const skills = [

@@ -6,7 +6,9 @@
     npm run build      # production build in /dist
 
 ## Before you run
-Put your photo at `public/profile.png`. Until you do, initials (MRI) are shown.
+The profile photo is loaded from `public/images/profile.png`. If it is missing, initials (MRI) are shown.
+
+The contact form delivers submissions through FormSubmit. On the first submission, FormSubmit sends a verification email to the portfolio owner; confirm it to activate delivery.
 
 ## Edit content
 Skills, projects, email and social links are all in `src/data.js`.

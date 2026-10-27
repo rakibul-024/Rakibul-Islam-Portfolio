@@ -25,13 +25,13 @@ export default function Navbar() {
         <ul className="hidden gap-8 md:flex">
           {navLinks.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="text-[13px] uppercase tracking-wider text-slate-400 transition hover:text-white">
+              <a href={l.href} className="nav-link text-[13px] uppercase tracking-wider text-slate-400 transition hover:text-white">
                 {l.label}
               </a>
             </li>
           ))}
         </ul>
-        <a href="#contact" className="hidden rounded border border-brand px-6 py-2.5 text-[13px] uppercase tracking-wider text-brand2 transition hover:bg-brand hover:text-white md:inline-block">
+        <a href="#contact" className="interactive-button hidden rounded border border-brand px-6 py-2.5 text-[13px] uppercase tracking-wider text-brand2 transition hover:bg-brand hover:text-white md:inline-block">
           Hire Me
         </a>
         <button onClick={() => setOpen(!open)} aria-label="Menu" aria-expanded={open} className="flex flex-col gap-[5px] p-1 md:hidden">

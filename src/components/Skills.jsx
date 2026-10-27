@@ -12,7 +12,7 @@ export default function Skills() {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {skills.map((s) => (
-            <Reveal key={s.title} className="rounded-2xl border border-line bg-bg3 p-6">
+            <Reveal key={s.title} className="interactive-card rounded-2xl border border-line bg-bg3 p-6">
               <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-lg bg-brand/15 text-brand2">
                 <i className={`fa-solid ${s.icon}`} />
               </div>

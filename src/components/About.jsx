@@ -11,7 +11,7 @@ export default function About() {
   return (
     <section id="about" className="px-[5%] py-24">
       <div className="mx-auto grid max-w-6xl items-center gap-14 lg:grid-cols-[1fr_1.2fr]">
-        <Reveal className="relative mx-auto max-w-sm lg:mx-0">
+        <Reveal className="interactive-card relative mx-auto max-w-sm rounded-2xl border border-line bg-bg3 p-1 lg:mx-0">
           <div className="absolute -bottom-3 -right-3 h-full w-full rounded-2xl border border-brand/40" />
           <Avatar className="relative aspect-[4/5] w-full rounded-2xl" />
         </Reveal>
@@ -32,7 +32,7 @@ export default function About() {
 
           <div className="mt-8 grid gap-4 sm:grid-cols-3">
             {cards.map((c) => (
-              <div key={c.title} className="rounded-xl border border-line bg-bg2 p-4">
+              <div key={c.title} className="interactive-card rounded-xl border border-line bg-bg2 p-4">
                 <i className={`fa-solid ${c.icon} mb-2 text-brand2`} />
                 <div className="font-medium text-white">{c.title}</div>
                 <div className="text-sm text-slate-500">{c.text}</div>
@@ -40,7 +40,7 @@ export default function About() {
             ))}
           </div>
 
-          <a href="https://github.com/rakibul-024" target="_blank" rel="noopener noreferrer" className="mt-8 inline-block text-sm text-brand2 transition hover:text-white">
+          <a href="https://github.com/rakibul-024" target="_blank" rel="noopener noreferrer" className="interactive-link mt-8 inline-block text-sm text-brand2 transition hover:text-white">
             <i className="fa-brands fa-github mr-1" /> GitHub profile
           </a>
         </Reveal>

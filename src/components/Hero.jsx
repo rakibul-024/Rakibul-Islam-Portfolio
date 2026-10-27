@@ -1,6 +1,38 @@
+import { useEffect, useState } from 'react'
 import Avatar from './Avatar'
 
+const titles = [
+  'Full Stack Web Developer',
+  'UI/UX Designer',
+  'Building Modern Web Experiences',
+  'React & TypeScript Enthusiast',
+  'Always passionate to learn new.....',
+]
+
 export default function Hero() {
+  const [titleIndex, setTitleIndex] = useState(0)
+  const [typedTitle, setTypedTitle] = useState('')
+  const [deleting, setDeleting] = useState(false)
+
+  useEffect(() => {
+    const currentTitle = titles[titleIndex]
+    const complete = !deleting && typedTitle === currentTitle
+    const delay = complete ? 1500 : deleting ? 45 : 90
+
+    const timeout = window.setTimeout(() => {
+      if (complete) {
+        setDeleting(true)
+      } else if (deleting && typedTitle.length === 0) {
+        setDeleting(false)
+        setTitleIndex((index) => (index + 1) % titles.length)
+      } else {
+        setTypedTitle((value) => deleting ? value.slice(0, -1) : currentTitle.slice(0, value.length + 1))
+      }
+    }, delay)
+
+    return () => window.clearTimeout(timeout)
+  }, [deleting, titleIndex, typedTitle])
+
   return (
     <section id="hero" className="relative grid min-h-screen items-center gap-12 overflow-hidden px-[5%] pb-16 pt-32 md:grid-cols-2">
       <div
@@ -13,27 +45,28 @@ export default function Hero() {
       />
 
       <div className="relative z-10">
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-brand/30 bg-brand/10 px-4 py-1.5 text-xs uppercase tracking-widest text-brand2">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand2" /> Available for work
-        </div>
-        <h1 className="font-display text-5xl font-extrabold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+        <h1 className="font-display text-5xl font-extrabold text-mauve-100 sm:text-6xl lg:text-7xl">
           RAKIBUL<br />ISLAM
         </h1>
-        <div className="mt-4 font-display text-xl text-brand2">Full Stack Developer</div>
+        <div className="mt-4 min-h-16 font-display text-xl text-brand2 sm:min-h-8 sm:text-2xl" aria-hidden="true">
+          {typedTitle}<span className="typewriter-cursor">|</span>
+        </div>
+        <span className="sr-only">Full Stack Web Developer, UI/UX Designer, Building Modern Web Experiences, React &amp; TypeScript Enthusiast, Always passionate to learn new.....</span>
         <p className="mt-5 max-w-lg text-slate-400">
           I build complete web apps — from the database and authentication to a clean, responsive interface. Based in Bangladesh, open to work worldwide.
         </p>
         <div className="mt-8 flex flex-wrap gap-4">
-          <a href="#projects" className="rounded bg-brand px-8 py-3.5 font-medium text-white transition hover:bg-brand2">View My Work</a>
-          <a href="#contact" className="rounded border border-line px-8 py-3.5 text-slate-300 transition hover:border-brand2 hover:text-white">Get in Touch</a>
+          <a href="#projects" className="interactive-button rounded bg-brand px-8 py-3.5 font-medium text-white transition hover:bg-brand2">View My Work</a>
+          <a href="#contact" className="interactive-button rounded border border-line px-8 py-3.5 text-slate-300 transition hover:border-brand2 hover:text-white">Get in Touch</a>
         </div>
       </div>
 
       <div className="relative z-10 flex justify-center">
-        <div className="relative h-72 w-72 sm:h-96 sm:w-96">
-          <div className="absolute -inset-4 rounded-full border border-brand/30" />
-          <div className="absolute -inset-9 rounded-full border border-dashed border-brand/20" />
-          <Avatar className="h-full w-full overflow-hidden rounded-full border-2 border-brand" />
+        <div className="relative h-64 w-64 sm:h-72 sm:w-72">
+          <div className="absolute -inset-4 rounded-full border border-brand/40 shadow-[0_0_24px_rgba(59,130,246,0.15)]" />
+          <div className="avatar-orbit avatar-orbit-outer absolute -inset-8 rounded-full" aria-hidden="true" />
+          <div className="avatar-orbit avatar-orbit-inner absolute -inset-4 rounded-full" aria-hidden="true" />
+          <Avatar decorated className="h-full w-full" />
         </div>
       </div>
     </section>

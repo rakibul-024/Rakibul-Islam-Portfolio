@@ -25,12 +25,12 @@ export const skills = [
 
 export const projects = [
   {
-    title: 'FitLog',
-    img: '/images/fitlog.webp',
-    desc: 'A responsive workout library and daily planner. Browse exercises, add up to five workouts to today’s plan, save favorites, search and sort completed workouts, and get toast feedback on every action.',
-    tags: ['Next.js', 'React', 'Tailwind CSS'],
-    live: 'https://fit-log-two-kappa.vercel.app',
-    code: 'https://github.com/rakibul-024/fit-log',
+    title: 'Bazar Dor',
+    img: '/images/bazar-dor.webp',
+    desc: 'A real-time commodity price tracker and daily market update app in Bangla. Check rice, pulses, oil, vegetables, fish, meat, eggs and spices, with price changes in one place.',
+    tags: ['Next.js', 'Better Auth', 'MongoDB'],
+    live: 'https://bazar-dor-c9qe.vercel.app',
+    code: 'https://github.com/rakibul-024/bazar-dor',
   },
   {
     title: 'Bangla News 24',
@@ -41,12 +41,12 @@ export const projects = [
     code: 'https://github.com/rakibul-024/bangla-news-24',
   },
   {
-    title: 'Bazar Dor',
-    img: '/images/bazar-dor.webp',
-    desc: 'A real-time commodity price tracker and daily market update app in Bangla. Check rice, pulses, oil, vegetables, fish, meat, eggs and spices, with price changes in one place.',
-    tags: ['Next.js', 'Better Auth', 'MongoDB'],
-    live: 'https://bazar-dor-c9qe.vercel.app',
-    code: 'https://github.com/rakibul-024/bazar-dor',
+    title: 'FitLog',
+    img: '/images/fitlog.webp',
+    desc: 'A responsive workout library and daily planner. Browse exercises, add up to five workouts to today’s plan, save favorites, search and sort completed workouts, and get toast feedback on every action.',
+    tags: ['Next.js', 'React', 'Tailwind CSS'],
+    live: 'https://fit-log-two-kappa.vercel.app',
+    code: 'https://github.com/rakibul-024/fit-log',
   },
   {
     title: 'Book Vibe',
@@ -55,5 +55,21 @@ export const projects = [
     tags: ['Next.js', 'React', 'React Toastify'],
     live: 'https://b14-book-vibe-nine.vercel.app',
     code: 'https://github.com/rakibul-024/b14-book-vibe',
+  },
+  {
+    title: 'Dev Stack',
+    img: '/images/devstack.png',
+    desc: 'Explore frontend, backend, databases, and developer tools, then compare technologies and build a personalized development stack with instant feedback.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    live: 'https://b14-a05-devstack-project-ass.netlify.app/',
+    code: 'https://github.com/rakibul-024/B14-A05-DevStack',
+  },
+  {
+    title: 'BPL Dream 11',
+    img: '/images/bpl-dream-11.png',
+    desc: 'A responsive cricket team selection app where you can browse players, manage your budget, select up to six players, and build your dream team.',
+    tags: ['React', 'TypeScript', 'Tailwind CSS'],
+    live: 'https://bpl-dream-11-umber.vercel.app',
+    code: 'https://github.com/rakibul-024/bpl-dream-11',
   },
 ]
